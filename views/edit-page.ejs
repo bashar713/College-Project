@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+
+                    <div class="col-lg-9">
+                        
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h2>Edit</h2>                           
+                                    <form action="/actions/editCategory" method="POST" id="editCategory_form">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                        <input type="hidden" name="id" value="<%= categories[0]._id%>">
+                                        
+                                            <div class="form-group">
+                                                <label for="categoryName">Category name</label>
+                                                <input required type="text" name="categoryName" id="categoryName" class="form-control" value="<%=categories[0].categoryName%> " />
+                                            </div>
+      
+                                            <div class="form-group">
+                                                <label for="categoryOrder">Category order</label>
+                                                <input required type="number" name="categoryOrder" id="categoryOrder" class="form-control" value="<%=categories[0].categoryOrder%>" />
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="categoryImage">Category image</label>
+                                                <input required type="text" name="categoryImage" id="categoryImage" class="form-control" value="<%=categories[0].categoryImage %>" />
+                                            </div>
+                                       
+                                        <input type="submit" id="editCategory_form" class="btn btn-primary" style="width: 100%; margin-top: 10px;" value="finish editing" />
+                                    </form>
+                                    <br>
+                                </div>
+
+                            </div>
+                            <!-- /.row -->
+                    </div>
+                    <!-- /.col-lg-9 -->
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
